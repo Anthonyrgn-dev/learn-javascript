@@ -59,6 +59,139 @@ const donnerMention = function (note) {
         return `Echec`
     }
 }
-
 console.log(donnerMention(14));
 
+console.log(`--------------------------------`)
+
+
+function sayHello(name) {
+    return `Hello ${name}`;
+}
+
+console.log(sayHello('Anthony'));
+
+console.log(`--------------------------------`)
+
+
+function isPositive(number) {
+    if (number >= 0) {
+        return `Positive`;
+    } else {
+        return `Negative`;
+    }
+}
+
+console.log(isPositive(10));
+console.log(isPositive(-10));
+
+console.log(`--------------------------------`)
+
+function addition (a, b) {
+    return a + b;
+}
+
+console.log( addition(5, 2))
+
+console.log(`--------------------------------`)
+
+function isPair(number) {
+    if (number % 2 === 0) {
+        return `Pair`;
+    } else {
+        return `Impair`;
+    }
+}
+
+console.log(isPair(4));
+console.log(isPair(5));
+
+console.log(`-----------------------------`);
+
+function listName(tab) {
+    const array = ['Anthony', 'John', 'Jane'];
+
+    return `Les prenoms sont : ${array[0]}, ${array[1]} et ${array[2]}}`
+}
+
+console.log(listName());
+
+
+console.log(`-------------------------`)
+
+const person = {
+    firstName: 'Anthony',
+    age: 2025 - 1996,
+    city: 'Bordeaux'
+}
+
+console.log(`Je m'appelle ${person.firstName}, j'ai ${person.age} et j'habite a ${person.city}`);
+
+console.log(`-------------------------`)
+
+const hideProperty = {marque: 'Toyota', annee: 2020, prix: 100000};
+
+function showProperty(obj, cle) {
+    return obj[cle];
+}
+
+console.log(showProperty(hideProperty, 'marque'));
+
+console.log(`-------------------------`);
+
+function changeCity (person, city) {
+    person.city = city;
+}
+
+changeCity(person, 'Paris');
+
+console.log(person);
+
+console.log(`-------------------------`);
+
+function addEmail(person, email){
+    person.email = email;
+    return person;
+}
+
+console.log(addEmail(person, 'ringeisen.anthony@icloud.com'));
+
+console.log(person)
+
+console.log(`-------------------------`);
+
+function aboutMe (person) {
+    return `Je m'appelle ${person.firstName}, j'ai ${person.age} ans et j'habite a ${person.city}.`;
+}
+
+console.log(aboutMe(person));
+
+console.log(`-------------------------`);
+
+const myCar = {
+    marque: 'Toyota',
+    annee: 2020,
+    prix: 100000,
+    description: function () {
+        return `Ceci est une voiture de marque ${this.marque} des annees ${this.annee} et a un prix de ${this.prix} euros.`;
+    },
+
+    changePrice: function (nouveauPrix) {
+        this.prix = nouveauPrix;
+        return this.description();
+    }
+}
+
+myCar.changePrice(30000000);
+console.log(myCar.description());
+
+
+// UNDEFINED ARROW FUNCTION
+
+const car = {
+    marque: 'Tesla',
+    description: () => {
+        return `Marque : ${this.marque}`;
+    }
+};
+
+console.log(car.description());
